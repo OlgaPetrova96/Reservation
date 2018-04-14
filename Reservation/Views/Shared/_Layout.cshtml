@@ -17,17 +17,12 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div style="float: right; position: absolute; right: 0; top: 0;">
+        <a href="#" class="btn btn-info" role="button">Log In</a>
+    </div>
+    <div class="jumbotron text-center" style="clear: both;">
+        <h1>Система бронирования переговорных комнат</h1>
+    </div>
     <div class="container body-content">
         @RenderBody()
         <hr />
