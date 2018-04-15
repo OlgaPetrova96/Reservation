@@ -2,17 +2,70 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Reservation.Models;
 
 namespace Reservation.Controllers
 {   
-    //[Authorize]
+    [Authorize]
     public class HomeController : Controller
     {
-        //[Authorize(Policy = "login")]
+        private readonly Dictionary<string, string> _userData;
+
+        public HomeController()
+        {
+            _userData = new Dictionary<string, string>
+            {
+                {"Olga", "123"}
+            };
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Login()
+        {
+            return View(new LoginModel());
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Login(LoginModel model)
+        {
+            //Проверяем что совпадает логин и пароль
+            if (_userData.ContainsKey(model.Login) && _userData[model.Login] == model.Password)
+            {
+                var principal = GetPrincipal(model);
+                // установка аутентификационных куки
+                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+
+
+                return RedirectToAction("Index", "Home");
+            }
+            ModelState.AddModelError("", "Некорректные логин и(или) пароль");
+
+            return View(model);
+        }
+
+        private ClaimsPrincipal GetPrincipal(LoginModel model)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimsIdentity.DefaultNameClaimType, model.Login)
+            };
+
+            var identity = new ClaimsIdentity(claims,
+                "ApplicationCookie",                    
+                ClaimsIdentity.DefaultNameClaimType,    //Ключ который будет использоваться для определении имени пользователя
+                ClaimsIdentity.DefaultRoleClaimType);   //Ключ который будет использоваться для определении роли пользователя
+
+            return new ClaimsPrincipal(identity);
+        }
+
         public IActionResult Index()
         {
             var rooms = new List<MeetingRoom>();
@@ -24,7 +77,7 @@ namespace Reservation.Controllers
             return View(rooms);
         }
 
-        //[Authorize(Policy = "login")]
+        [Authorize]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -32,16 +85,10 @@ namespace Reservation.Controllers
             return View();
         }
 
-        //[Authorize(Policy = "login")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
 
-            return View();
-        }
-
-        public IActionResult Login()
-        {
             return View();
         }
     }

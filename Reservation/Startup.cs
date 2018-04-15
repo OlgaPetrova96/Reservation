@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Reservation.Models;
 
 namespace Reservation
 {
@@ -23,7 +25,19 @@ namespace Reservation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                    .AddCookie(options => 
+            {
+                options.LoginPath = new PathString("/Home/Login");
+            });
+
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("age-policy", policy => policy.RequireClaim("age"));
+            //    options.AddPolicy("Olga", policy => policy.RequireClaim("Login", "Olga"));
+            //    options.AddPolicy("min-age-policy", policy => { policy.Requirements.Add(new LoginModel { Login = "Olga", Password = "123" }); });
+            //});
+
             services.AddMvc();
         }
 
@@ -40,6 +54,8 @@ namespace Reservation
             }
 
             app.UseStaticFiles();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

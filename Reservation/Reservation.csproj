@@ -14,5 +14,7 @@
 
   <ItemGroup>
     <Compile Remove="Models\ErrorViewModel.cs" />
+    <Compile Remove="Models\Login.cs" />
+    <Compile Remove="Controllers\AuthController.cs" />
   </ItemGroup>
 </Project>
