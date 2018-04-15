@@ -8,10 +8,9 @@ namespace Reservation.Models
         [Required]
         public int Id { get; set; } 
         public string Name { get; set; }
-        [Range(1, 60)]                      // просто так сделала ограничение на вместимость, по сути этого можно и не делать
-        public int Capacity { get; set; }   // вместимость
+        public int Capacity { get; set; }
 
-        public MeetingRoom (int id, string name, int capacity) // временно (для меня)
+        public MeetingRoom (int id, string name, int capacity)
         {
             Id = id;
             Name = name;

@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Reservation.Models;
 
 namespace Reservation.Controllers
-{
+{   
+    //[Authorize]
     public class HomeController : Controller
     {
+        //[Authorize(Policy = "login")]
         public IActionResult Index()
         {
             var rooms = new List<MeetingRoom>();
@@ -21,6 +24,7 @@ namespace Reservation.Controllers
             return View(rooms);
         }
 
+        //[Authorize(Policy = "login")]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -28,6 +32,7 @@ namespace Reservation.Controllers
             return View();
         }
 
+        //[Authorize(Policy = "login")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
@@ -35,7 +40,7 @@ namespace Reservation.Controllers
             return View();
         }
 
-        public IActionResult LogIn()
+        public IActionResult Login()
         {
             return View();
         }
