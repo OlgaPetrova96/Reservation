@@ -15,15 +15,15 @@ namespace Reservation.Controllers
     [Authorize]
     public class HomeController : Controller
     {
-        private readonly Dictionary<string, string> _userData;
+        //readonly Dictionary<string, string> _userData;
 
-        public HomeController()
-        {
-            _userData = new Dictionary<string, string>
-            {
-                {"Olga", "123"}
-            };
-        }
+        //public HomeController()
+        //{
+        //    _userData = new Dictionary<string, string>
+        //    {
+        //        {"Olga", "123"}
+        //    };
+        //}
 
         [HttpGet]
         [AllowAnonymous]
@@ -36,19 +36,11 @@ namespace Reservation.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(LoginModel model)
         {
-            //Проверяем что совпадает логин и пароль
-            if (_userData.ContainsKey(model.Login) && _userData[model.Login] == model.Password)
-            {
-                var principal = GetPrincipal(model);
-                // установка аутентификационных куки
-                await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+            var principal = GetPrincipal(model);
+            // установка аутентификационных куки
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
 
-
-                return RedirectToAction("Index", "Home");
-            }
-            ModelState.AddModelError("", "Некорректные логин и(или) пароль");
-
-            return View(model);
+            return RedirectToAction("Index", "Home");
         }
 
         private ClaimsPrincipal GetPrincipal(LoginModel model)
@@ -66,6 +58,7 @@ namespace Reservation.Controllers
             return new ClaimsPrincipal(identity);
         }
 
+        [Authorize]
         public IActionResult Index()
         {
             var rooms = new List<MeetingRoom>();
