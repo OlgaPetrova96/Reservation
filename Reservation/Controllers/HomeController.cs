@@ -12,7 +12,7 @@ using Reservation.Models;
 
 namespace Reservation.Controllers
 {   
-    [Authorize]
+    //[Authorize]
     public class HomeController : Controller
     {
         //readonly Dictionary<string, string> _userData;
@@ -26,14 +26,14 @@ namespace Reservation.Controllers
         //}
 
         [HttpGet]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public IActionResult Login()
         {
             return View(new LoginModel());
         }
 
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> Login(LoginModel model)
         {
             var principal = GetPrincipal(model);
@@ -43,7 +43,7 @@ namespace Reservation.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        private ClaimsPrincipal GetPrincipal(LoginModel model)
+        ClaimsPrincipal GetPrincipal(LoginModel model)
         {
             var claims = new List<Claim>
             {
@@ -58,7 +58,7 @@ namespace Reservation.Controllers
             return new ClaimsPrincipal(identity);
         }
 
-        [Authorize]
+        //[Authorize]
         public IActionResult Index()
         {
             var rooms = new List<MeetingRoom>();
@@ -70,7 +70,7 @@ namespace Reservation.Controllers
             return View(rooms);
         }
 
-        [Authorize]
+        //[Authorize]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

@@ -1,0 +1,14 @@
+﻿<Properties StartupConfiguration="{D21DEA85-A4F6-40B9-9ABF-1BCDD6421CDE}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Reservation/Controllers/HomeController.cs">
+    <Files>
+      <File FileName="Reservation/Controllers/HomeController.cs" Line="16" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Reservation PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

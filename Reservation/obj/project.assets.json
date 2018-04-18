@@ -12539,11 +12539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/olga_petrova/Projects/Reservation/Reservation/Reservation.csproj",
+      "projectUniqueName": "/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/Reservation.csproj",
       "projectName": "Reservation",
-      "projectPath": "/Users/olga_petrova/Projects/Reservation/Reservation/Reservation.csproj",
+      "projectPath": "/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/Reservation.csproj",
       "packagesPath": "/Users/olga_petrova/.nuget/packages/",
-      "outputPath": "/Users/olga_petrova/Projects/Reservation/Reservation/obj",
+      "outputPath": "/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

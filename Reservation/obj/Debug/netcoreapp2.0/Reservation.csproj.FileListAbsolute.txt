@@ -9,3 +9,14 @@
 /Users/olga_petrova/Projects/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
 /Users/olga_petrova/Projects/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
 /Users/olga_petrova/Projects/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.deps.json
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.json
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.dev.json
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.dll
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.pdb
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.csprojResolveAssemblyReference.cache
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.csproj.CoreCompileInputs.cache
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfoInputs.cache
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
+/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
