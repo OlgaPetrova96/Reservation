@@ -19,6 +19,6 @@
     <Compile Remove="Models\User.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="Views\Home\Registration.cshtml" />
+    <Content Remove="Views\Home\LoginTest.cshtml" />
   </ItemGroup>
 </Project>

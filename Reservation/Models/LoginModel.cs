@@ -11,9 +11,11 @@ namespace Reservation.Models
     public class LoginModel
     {
         public int Id { get; set; }
-        [Required(ErrorMessage = "Введите Email")]
+        [Required(ErrorMessage = "Не указан Email")]
         public string Login { get; set; }
-        [Required(ErrorMessage = "Введите пароль")]
+
+        [Required(ErrorMessage = "Не указан пароль")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }
