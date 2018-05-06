@@ -15,40 +15,6 @@ namespace Reservation.Controllers
     //[Authorize]
     public class HomeController : Controller
     {
-
-        [HttpGet]
-        //[AllowAnonymous]
-        public IActionResult Login()
-        {
-            return View(new LoginModel());
-        }
-
-        [HttpPost]
-        //[AllowAnonymous]
-        public async Task<IActionResult> Login(LoginModel model)
-        {
-            var principal = GetPrincipal(model);
-            // установка аутентификационных куки
-            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-
-            return RedirectToAction("Index", "Home");
-        }
-
-        ClaimsPrincipal GetPrincipal(LoginModel model)
-        {
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, model.Login)
-            };
-
-            var identity = new ClaimsIdentity(claims,
-                "ApplicationCookie",                    
-                ClaimsIdentity.DefaultNameClaimType,    //Ключ который будет использоваться для определении имени пользователя
-                ClaimsIdentity.DefaultRoleClaimType);   //Ключ который будет использоваться для определении роли пользователя
-
-            return new ClaimsPrincipal(identity);
-        }
-
         //[Authorize]
         public IActionResult Index()
         {
@@ -74,6 +40,11 @@ namespace Reservation.Controllers
             ViewData["Message"] = "Your contact page.";
 
             return View();
+        }
+
+        public IActionResult Registration()
+        {
+            return View(new LoginModel());
         }
     }
 }

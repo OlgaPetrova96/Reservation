@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-
+<h1 style="margin-bottom: 5%;">Регистрация</h1>
 <form class="form-horizontal" action="/Home/Index">
     <div class="form-group">
         <label class="control-label col-sm-2" for="email">Email:</label>
@@ -17,8 +17,7 @@
     </div>
     <div class="form-group"> 
         <div class="col-sm-offset-2 col-sm-4">
-            <input type="submit" class="btn btn-default" value="Войти"/>
-            <p style="margin-top: 4%;">@Html.ActionLink("Зарегистрироваться", "Registration", "Home", new { area = "" }, new { @class = "btn btn-default" })</p>
-         </div>
+            <input type="submit" class="btn btn-default" value="Зарегистрироваться"/>
         </div>
+    </div>
 </form>

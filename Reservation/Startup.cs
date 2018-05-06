@@ -23,29 +23,17 @@ namespace Reservation
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
-
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                    .AddCookie(options => 
-            {
-                options.LoginPath = new PathString("/Home/Login");
-            });
-
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("age-policy", policy => policy.RequireClaim("age"));
-            //    options.AddPolicy("Olga", policy => policy.RequireClaim("Login", "Olga"));
-            //    options.AddPolicy("min-age-policy", policy => { policy.Requirements.Add(new LoginModel { Login = "Olga", Password = "123" }); });
-            //});
-
-            // получаем строку подключения из файла конфигурации
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            // добавляем контекст MobileContext в качестве сервиса в приложение
-            services.AddDbContext<RoomContext>(options =>
-                options.UseSqlServer(connection));
+            services.AddDbContext<RoomContext>(options => options.UseSqlServer(connection));
+
+            // установка конфигурации подключения
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => //CookieAuthenticationOptions
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                });
 
             services.AddMvc();
         }

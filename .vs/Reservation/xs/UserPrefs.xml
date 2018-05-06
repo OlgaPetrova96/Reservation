@@ -1,7 +1,8 @@
 ﻿<Properties StartupConfiguration="{D21DEA85-A4F6-40B9-9ABF-1BCDD6421CDE}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Reservation/Controllers/HomeController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Reservation/Views/Home/Registration.cshtml">
     <Files>
-      <File FileName="Reservation/Controllers/HomeController.cs" Line="16" Column="28" />
+      <File FileName="Reservation/Controllers/HomeController.cs" Line="72" Column="39" />
+      <File FileName="Reservation/Views/Home/Registration.cshtml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
