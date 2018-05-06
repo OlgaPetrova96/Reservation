@@ -5,18 +5,22 @@ namespace Reservation.Models
 {
     public class Reservation
     {
-        [Required]
-        public int Id { get; set; } 
-        [Required]
-        public DateTime TimeBooking { get; set; }
+        public int Id { get; set; }
+        public int RoomId{ get; set; }
+        public DateTime BeginTime { get; set; }
+        public DateTime EndTime { get; set; }
         public int Priority { get; set; }
         public string Booker { get; set; }
-        public Reservation (int id, DateTime timeBooking, int priority, string booker) 
+        public string Description { get; set; }
+
+        public Reservation (int id, DateTime beginTime, DateTime endTime, int priority, string booker, string descr) 
         {
-            Id = id;
-            TimeBooking = timeBooking;
+            RoomId = id;
+            BeginTime = beginTime;
+            EndTime = endTime;
             Priority = priority;
             Booker = booker;
+            Description = descr;
         }
     }
 }

@@ -20,3 +20,14 @@
 /Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
 /Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
 /Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
+D:\переговорка\Reservation-master\Reservation\bin\Debug\netcoreapp2.0\Reservation.deps.json
+D:\переговорка\Reservation-master\Reservation\bin\Debug\netcoreapp2.0\Reservation.runtimeconfig.json
+D:\переговорка\Reservation-master\Reservation\bin\Debug\netcoreapp2.0\Reservation.runtimeconfig.dev.json
+D:\переговорка\Reservation-master\Reservation\bin\Debug\netcoreapp2.0\Reservation.dll
+D:\переговорка\Reservation-master\Reservation\bin\Debug\netcoreapp2.0\Reservation.pdb
+D:\переговорка\Reservation-master\Reservation\obj\Debug\netcoreapp2.0\Reservation.csprojResolveAssemblyReference.cache
+D:\переговорка\Reservation-master\Reservation\obj\Debug\netcoreapp2.0\Reservation.csproj.CoreCompileInputs.cache
+D:\переговорка\Reservation-master\Reservation\obj\Debug\netcoreapp2.0\Reservation.AssemblyInfoInputs.cache
+D:\переговорка\Reservation-master\Reservation\obj\Debug\netcoreapp2.0\Reservation.AssemblyInfo.cs
+D:\переговорка\Reservation-master\Reservation\obj\Debug\netcoreapp2.0\Reservation.dll
+D:\переговорка\Reservation-master\Reservation\obj\Debug\netcoreapp2.0\Reservation.pdb

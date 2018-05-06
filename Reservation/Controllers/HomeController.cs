@@ -15,15 +15,6 @@ namespace Reservation.Controllers
     //[Authorize]
     public class HomeController : Controller
     {
-        //readonly Dictionary<string, string> _userData;
-
-        //public HomeController()
-        //{
-        //    _userData = new Dictionary<string, string>
-        //    {
-        //        {"Olga", "123"}
-        //    };
-        //}
 
         [HttpGet]
         //[AllowAnonymous]

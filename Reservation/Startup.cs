@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 using Reservation.Models;
 
 namespace Reservation
@@ -25,6 +26,8 @@ namespace Reservation
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            
+
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                     .AddCookie(options => 
             {
@@ -37,6 +40,12 @@ namespace Reservation
             //    options.AddPolicy("Olga", policy => policy.RequireClaim("Login", "Olga"));
             //    options.AddPolicy("min-age-policy", policy => { policy.Requirements.Add(new LoginModel { Login = "Olga", Password = "123" }); });
             //});
+
+            // получаем строку подключения из файла конфигурации
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            // добавляем контекст MobileContext в качестве сервиса в приложение
+            services.AddDbContext<RoomContext>(options =>
+                options.UseSqlServer(connection));
 
             services.AddMvc();
         }

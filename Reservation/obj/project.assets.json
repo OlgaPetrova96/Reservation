@@ -12533,28 +12533,36 @@
     ]
   },
   "packageFolders": {
-    "/Users/olga_petrova/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\Alechka\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/Reservation.csproj",
+      "projectUniqueName": "D:\\переговорка\\Reservation-master\\Reservation\\Reservation.csproj",
       "projectName": "Reservation",
-      "projectPath": "/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/Reservation.csproj",
-      "packagesPath": "/Users/olga_petrova/.nuget/packages/",
-      "outputPath": "/Users/olga_petrova/Documents/GitHub/Reservation/Reservation/obj",
+      "projectPath": "D:\\переговорка\\Reservation-master\\Reservation\\Reservation.csproj",
+      "packagesPath": "C:\\Users\\Alechka\\.nuget\\packages\\",
+      "outputPath": "D:\\переговорка\\Reservation-master\\Reservation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/olga_petrova/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Alechka\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -12571,15 +12579,14 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           }
         },
         "imports": [
