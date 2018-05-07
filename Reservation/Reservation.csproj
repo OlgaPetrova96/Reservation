@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,8 +18,5 @@
     <Compile Remove="Models\Login.cs" />
     <Compile Remove="Controllers\AuthController.cs" />
     <Compile Remove="Models\User.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Remove="Views\Home\LoginTest.cshtml" />
   </ItemGroup>
 </Project>

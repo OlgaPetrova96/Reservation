@@ -23,21 +23,21 @@ namespace Reservation
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<RoomContext>(options => options.UseSqlServer(connection));
 
+            // установка конфигурации подключения
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => //CookieAuthenticationOptions
                 {
-                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Home/Login");
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Login/Login");
                 });
+
             services.AddMvc();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -57,7 +57,10 @@ namespace Reservation
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Login}/{id?}");
+                    //template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Login}/{action=login}/{id?}");
+
+
             });
         }
     }

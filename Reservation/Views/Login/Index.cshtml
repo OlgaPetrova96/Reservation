@@ -1,0 +1,24 @@
+﻿@using Reservation.Models
+@model IEnumerable<MeetingRoom>
+@{
+    ViewData["Title"] = "Login Page";
+}
+
+<div>
+    @*<h3>Список переговорок</h3>
+    <table class="table table-bordered">
+        <tr class="header" style="background: #DCDCDC">
+            <td><p>Id</p></td>
+            <td><p>Нзвание</p></td>
+            <td><p>Вместимость</p></td>
+        </tr>
+        @foreach (MeetingRoom room in Model)
+        {
+            <tr>
+                <td><p>@room.Id</p></td>
+                <td><p>@room.Name</p></td>
+                <td><p>@room.Capacity</p></td>
+            </tr>
+        }
+    </table>*@
+</div>

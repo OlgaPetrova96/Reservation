@@ -31,14 +31,36 @@ D:/переговорка/Reservation-master/Reservation/obj/Debug/netcoreapp2.0
 D:/переговорка/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
 D:/переговорка/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
 D:/переговорка/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
-/Users/olga_petrova/Downloads/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.deps.json
-/Users/olga_petrova/Downloads/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.json
-/Users/olga_petrova/Downloads/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.dev.json
-/Users/olga_petrova/Downloads/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.dll
-/Users/olga_petrova/Downloads/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.pdb
-/Users/olga_petrova/Downloads/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.csprojResolveAssemblyReference.cache
-/Users/olga_petrova/Downloads/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.csproj.CoreCompileInputs.cache
-/Users/olga_petrova/Downloads/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfoInputs.cache
-/Users/olga_petrova/Downloads/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
-/Users/olga_petrova/Downloads/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
-/Users/olga_petrova/Downloads/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.deps.json
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.json
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.dev.json
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.dll
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/bin/Debug/netcoreapp2.0/Reservation.pdb
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.csprojResolveAssemblyReference.cache
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.csproj.CoreCompileInputs.cache
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfoInputs.cache
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
+C:/Users/Alechka/Documents/GitHub/Reservation/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/bin/Debug/netcoreapp2.0/Reservation.deps.json
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.json
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.dev.json
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/bin/Debug/netcoreapp2.0/Reservation.dll
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/bin/Debug/netcoreapp2.0/Reservation.pdb
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.csprojResolveAssemblyReference.cache
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.csproj.CoreCompileInputs.cache
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfoInputs.cache
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
+C:/Users/a.melentyeva/Desktop/Reservation-master/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/bin/Debug/netcoreapp2.0/Reservation.deps.json
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.json
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/bin/Debug/netcoreapp2.0/Reservation.runtimeconfig.dev.json
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/bin/Debug/netcoreapp2.0/Reservation.dll
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/bin/Debug/netcoreapp2.0/Reservation.pdb
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/obj/Debug/netcoreapp2.0/Reservation.csprojResolveAssemblyReference.cache
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/obj/Debug/netcoreapp2.0/Reservation.csproj.CoreCompileInputs.cache
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfoInputs.cache
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/obj/Debug/netcoreapp2.0/Reservation.AssemblyInfo.cs
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/obj/Debug/netcoreapp2.0/Reservation.dll
+/Users/olga_petrova/Desktop/Reservation-master (1)/Reservation/obj/Debug/netcoreapp2.0/Reservation.pdb
