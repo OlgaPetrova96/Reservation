@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace Reservation.Controllers
 {
-    
+    [Authorize]
     public class ReservationController : Controller
     {
         private RoomContext db;
@@ -21,7 +21,6 @@ namespace Reservation.Controllers
         }
 
         // GET: Reservation
-        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await db.Reservations.ToListAsync());

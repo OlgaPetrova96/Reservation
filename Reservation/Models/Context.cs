@@ -9,9 +9,18 @@ namespace Reservation.Models
     {
         public DbSet<LoginModel> Logins { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
-        public RoomContext(DbContextOptions<RoomContext> options)
-            : base(options)
+
+        public DbSet<MeetingRoom> MeetingRoom { get; set; }
+
+        public RoomContext(DbContextOptions<RoomContext> dbContextOptions) : base(dbContextOptions)
         {
+
         }
+    
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=roomsdb;Username=postgres;Password=cucucu29");
+        }
+
     }
 }

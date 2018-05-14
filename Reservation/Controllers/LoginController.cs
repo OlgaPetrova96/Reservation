@@ -64,9 +64,8 @@ namespace Reservation.Controllers
                 LoginModel user = await db.Logins.FirstOrDefaultAsync(u => u.Login == model.Login);
                 if (user == null)
                 {
-                    var g = Guid.NewGuid();
                     
-                    db.Logins.Add(new LoginModel { Id = 0, Login = model.Login, Password = model.Password });
+                    db.Logins.Add(new LoginModel {Login = model.Login, Password = model.Password });
                     await db.SaveChangesAsync();
 
                     await Authenticate(model.Login); 

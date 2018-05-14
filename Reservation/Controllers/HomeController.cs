@@ -13,11 +13,16 @@ using Reservation.Models;
 
 namespace Reservation.Controllers
 {
-
+    [Authorize]
     public class HomeController : Controller
     {
-       
-       
+        private RoomContext db;
+
+        public HomeController(RoomContext context)
+        {
+            db = context;
+        }
+
         public IActionResult Index()
         {
             var rooms = new List<MeetingRoom>();

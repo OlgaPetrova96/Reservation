@@ -25,14 +25,14 @@ namespace Reservation
 
         public void ConfigureServices(IServiceCollection services)
         {
-            string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<RoomContext>(options => options.UseSqlServer(connection));
+            //string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<RoomContext>(options => options.UseNpgsql("Host=localhost;Port=5432;Database=roomsdb;Username=postgres;Password=cucucu29"));
 
             // установка конфигурации подключения
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options => //CookieAuthenticationOptions
                 {
-                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Login/Login");
+                    options.LoginPath = new PathString("/Login/Login");
                 });
 
             services.AddMvc();
@@ -59,8 +59,6 @@ namespace Reservation
                     name: "default",
                     //template: "{controller=Home}/{action=Index}/{id?}");
                     template: "{controller=Login}/{action=login}/{id?}");
-
-
             });
         }
     }
