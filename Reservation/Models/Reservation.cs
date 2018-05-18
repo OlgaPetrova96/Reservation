@@ -12,15 +12,6 @@ namespace Reservation.Models
         public int Priority { get; set; }
         public string Booker { get; set; }
         public string Description { get; set; }
-
-        public Reservation (int id, DateTime beginTime, DateTime endTime, int priority, string booker, string descr) 
-        {
-            RoomId = id;
-            BeginTime = beginTime;
-            EndTime = endTime;
-            Priority = priority;
-            Booker = booker;
-            Description = descr;
-        }
+      
     }
 }

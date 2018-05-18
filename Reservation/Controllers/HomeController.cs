@@ -23,29 +23,17 @@ namespace Reservation.Controllers
             db = context;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var rooms = new List<MeetingRoom>();
-            rooms.Add(new MeetingRoom(1, "Room 1", 10));
-            rooms.Add(new MeetingRoom(2, "Room 2", 10));
-            rooms.Add(new MeetingRoom(3, "Room 3", 13));
-            rooms.Add(new MeetingRoom(4, "Room 4", 10));
-            rooms.Add(new MeetingRoom(5, "Room 5", 11));
-            return View(rooms);
+            var reservation = await db.Reservations.Where(x => x.Booker == User.Identity.Name).ToArrayAsync();
+            var rooms = reservation.Select(async x => await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId))
+                .Select(t => t.Result.Name);
+            return View(reservation);
         }
 
-        public IActionResult About()
+        public IActionResult Reservation()
         {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
+             return RedirectToAction("Index", "Resevation"); ;
         }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-    }
+    } 
 }

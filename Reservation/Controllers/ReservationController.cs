@@ -27,10 +27,10 @@ namespace Reservation.Controllers
         }
 
         // GET: Reservation/Details/5
-        //public IActionResult Details(int id)
-        //{
-        //    return View();
-        //}
+        public IActionResult Details(int id)
+        {
+            return View();
+        }
 
         // GET: Reservation/Create
         [HttpGet]
@@ -47,7 +47,8 @@ namespace Reservation.Controllers
         {
             try
             {
-                db.Reservations.Add(reservation);
+                reservation.Booker = User.Identity.Name;
+                await db.Reservations.AddAsync(reservation);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
@@ -58,49 +59,49 @@ namespace Reservation.Controllers
         }
 
         // GET: Reservation/Edit/5
-        //public IActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
+        public IActionResult Edit(int id)
+        {
+            return View();
+        }
 
-        //// POST: Reservation/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add update logic here
+        // POST: Reservation/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, IFormCollection collection)
+        {
+            try
+            {
+                // TODO: Add update logic here
 
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
 
-        //// GET: Reservation/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
+        // GET: Reservation/Delete/5
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
 
-        //// POST: Reservation/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        // TODO: Add delete logic here
+        // POST: Reservation/Delete/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id, IFormCollection collection)
+        {
+            try
+            {
+                // TODO: Add delete logic here
 
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }

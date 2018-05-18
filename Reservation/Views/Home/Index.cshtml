@@ -1,24 +1,34 @@
 ﻿@using Reservation.Models
-@model IEnumerable<MeetingRoom>
+@model IEnumerable<Reservation>
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "My reservations";
 }
 
 <div>
-    <h3>Список переговорок</h3>
+    <h3>Мои бронирования: </h3>
     <table class="table table-bordered">
         <tr class="header" style="background: #DCDCDC">
-            <td><p>Id</p></td>
-            <td><p>Нзвание</p></td>
-            <td><p>Вместимость</p></td>
+            <td><p>Начало встречи</p></td>
+            <td><p>Окончание встречи</p></td>
+            <td><p>Описание</p></td>
+            <td><p>Приоритет</p></td>
+            <td><p>Комната</p></td>
         </tr>
-        @foreach (MeetingRoom room in Model)
+        @foreach (Reservation reserv in Model)
         {
             <tr>
-                <td><p>@room.Id</p></td>
-                <td><p>@room.Name</p></td>
-                <td><p>@room.Capacity</p></td>
-            </tr>
-        }
+                <td><p>@reserv.Id</p></td>
+                <td><p>@reserv.BeginTime</p></td>
+                <td><p>@reserv.EndTime</p></td>
+                <td><p>@reserv.Description</p></td>
+                <td><p>@reserv.Priority</p></td>
+                <td>
+                    <p>
+                        @reserv.RoomId;
+                </p>
+            </td>
+        </tr>
+    }
     </table>
 </div>

@@ -70,7 +70,7 @@ namespace Reservation.Controllers
 
                     await Authenticate(model.Login); 
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new { });
                 }
                 else
                     ModelState.AddModelError("", "Некорректные логин и(или) пароль");
