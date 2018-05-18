@@ -26,7 +26,8 @@ namespace Reservation
         public void ConfigureServices(IServiceCollection services)
         {
             //string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<RoomContext>(options => options.UseNpgsql("Host=localhost;Port=5432;Database=roomsdb;Username=postgres;Password=cucucu29"));
+            services.AddDbContext<RoomContext>(options 
+                => options.UseNpgsql("Host=localhost;Port=5432;Database=roomsdb;Username=postgres;Password=cucucu29"));
 
             // установка конфигурации подключения
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
