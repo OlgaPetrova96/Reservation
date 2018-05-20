@@ -1,35 +1,34 @@
-﻿@using System.Collections.Generic
-@using Reservation.Models
-@model System.Collections.Generic.IEnumerable<Reservation>
+﻿@using Reservation.Models
+@model System.Collections.Generic.IEnumerable<ReservationView>
 
 @{
-    ViewData["Title"] = "My reservations";
+    ViewData["Title"] = "Мои бронирования";
 }
 
 <h3>Мои бронирования: </h3>
 <table class="table table-bordered">
     <thead class="header" style="background: #DCDCDC; font-weight: bold;">
-        <td>Номер</td>
-        <td>Комната</td>
+        <td>Переговорка</td>
+        <td>Количество людей</td>
         <td>Начало встречи</td>
         <td>Окончание встречи</td>
-        <td>Описание</td>
         <td>Приоритет</td>
+        <td>Описание</td>
         <td></td>
     </thead>
     <tbody>
-    @foreach (Reservation reserv in Model)
+    @foreach (ReservationView reserv in Model)
     {
         <tr>
-            <td>@reserv.Id</td>
-            <td>@reserv.RoomId</td>
-            <td>@reserv.BeginTime</td>
-            <td>@reserv.EndTime</td>
-            <td>@reserv.Description</td>
-            <td>@reserv.Priority</td>
+            <td>@reserv.MeetingRoom.Name</td>
+            <td>@reserv.MeetingRoom.Capacity</td>
+            <td>@reserv.Reservation.BeginTime</td>
+            <td>@reserv.Reservation.EndTime</td>
+            <td>@reserv.Reservation.Priority</td>
+            <td>@reserv.Reservation.Description</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@reserv.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@reserv.Id">Delete</a>
+                <a asp-action="Edit" asp-controller="Reservation" asp-route-id="@reserv.Reservation.Id">Edit</a> |
+                <a asp-action="Delete" asp-controller="Reservation" asp-route-id="@reserv.Reservation.Id">Delete</a>
             </td>
         </tr>
     }

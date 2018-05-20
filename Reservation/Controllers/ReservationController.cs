@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Reservation.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Reservation.Controllers
 {
@@ -20,33 +21,36 @@ namespace Reservation.Controllers
             db = context;
         }
 
-        // GET: Reservation
         public async Task<IActionResult> Index()
         {
-            return View(await db.Reservations.ToListAsync());
+            var reservation = await db.Reservations.ToArrayAsync();
+
+            var reservationView = reservation.Select(async x =>
+            {
+                var t = await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId);
+                return new ReservationView(x, t);
+            }).Select(r => r.Result);
+
+            return View(reservationView);
         }
 
-        // GET: Reservation/Details/5
-        public IActionResult Details(int id)
-        {
-            return View();
-        }
 
-        // GET: Reservation/Create
         [HttpGet]
         [Authorize]
         public IActionResult Create()
         {
+            ViewBag.RoomId = new SelectList( db.MeetingRoom.Select(r => r.Name));
+            ViewBag.Priority = new SelectList(new List<Priority> { Priority.High, Priority.Low, Priority.Middle }, "Priority");
             return View();
         }
 
-        // POST: Reservation/Create
         [HttpPost]
         [Authorize]
         public async Task<IActionResult> Create(Models.Reservation reservation)
         {
             try
             {
+              //  ViewBag.Priority = new SelectList(new List<Priority>{ Priority.High, Priority.Low, Priority.Middle});
                 reservation.Booker = User.Identity.Name;
                 await db.Reservations.AddAsync(reservation);
                 await db.SaveChangesAsync();
@@ -58,21 +62,19 @@ namespace Reservation.Controllers
             }
         }
 
-        // GET: Reservation/Edit/5
+        [HttpGet]
         public IActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Reservation/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
-                // TODO: Add update logic here
-
+               
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -81,21 +83,21 @@ namespace Reservation.Controllers
             }
         }
 
-        // GET: Reservation/Delete/5
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Reservation/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Delete(int id, IFormCollection collection)
         {
             try
             {
-                // TODO: Add delete logic here
-
+                var res = await db.Reservations.FirstOrDefaultAsync(r => r.Id == id);
+                db.Reservations.Remove(res);
+                await db.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             catch

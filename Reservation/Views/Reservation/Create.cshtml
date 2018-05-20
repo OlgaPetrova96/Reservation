@@ -1,46 +1,46 @@
-﻿@model Reservation
+﻿@using Reservation.Models
+@model Reservation
 
 @{
     ViewData["Title"] = "Создать";
 }
 
-<h2>Create</h2>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-<h4>Reservation</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            
-            <div class="form-group">
-                <label asp-for="BeginTime" class="control-label"></label>
-                <input asp-for="BeginTime" class="form-control" />
-                <span asp-validation-for="BeginTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="EndTime" class="control-label"></label>
-                <input asp-for="EndTime" class="form-control" />
-                <span asp-validation-for="EndTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Priority" class="control-label"></label>
-                <input asp-for="Priority" class="form-control" />
-                <span asp-validation-for="Priority" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </form>
+                <div class="form-group">
+                    <label asp-for="RoomId" class="control-label"></label>
+                    @Html.DropDownListFor(model => model.RoomId, ViewBag.RoomId as SelectList)
+                    <input asp-for="Priority" class="form-control" />
+                    <span asp-validation-for="RoomId" class="text-danger"></span>
+                </div>
+                @*<div class="form-group">
+                    <label asp-for="BeginTime" class="control-label"></label>
+                    <input asp-for="BeginTime" class="form-control" />
+                    <span asp-validation-for="BeginTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EndTime" class="control-label"></label>
+                    <input asp-for="EndTime" class="form-control" />
+                    <span asp-validation-for="EndTime" class="text-danger"></span>
+                </div>*@
+                <div class="form-group">
+                    <label asp-for="Priority" class="control-label"></label>
+                    @Html.DropDownList("A", ViewBag.Priority as SelectList)
+                    @*<input asp-for="Priority" class="form-control" />*@
+                    <span asp-validation-for="Priority" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Назад к списку бронирований</a>
-</div>
-

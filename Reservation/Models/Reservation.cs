@@ -7,16 +7,23 @@ namespace Reservation.Models
     {
         [Display(Name = "Номер")] 
         public int Id { get; set; }
+
         [Display(Name = "Комната")] 
-        public int RoomId{ get; set; } // вот тут Id на название переговорки поменяем
+        public int RoomId{ get; set; } 
+
         [Display(Name = "Начало встречи")]
         public DateTime BeginTime { get; set; }
+
         [Display(Name = "Окончание встречи")]
         public DateTime EndTime { get; set; }
+
         [Display(Name = "Приоритет")]
+        //[Range(1, 3, ErrorMessage = "Недопустимый приоритет")]
         public int Priority { get; set; }
-        [Display(Name = "Бронировщик")]
+
+        [Display(Name = "Кто забронировал")]
         public string Booker { get; set; }
+
         [Display(Name = "Описание")]
         public string Description { get; set; }
       

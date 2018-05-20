@@ -25,10 +25,15 @@ namespace Reservation.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var reservation = await db.Reservations.Where(x => x.Booker == User.Identity.Name).ToArrayAsync();
-            var rooms = reservation.Select(async x => await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId))
-                .Select(t => t.Result.Name);
-            return View(reservation);
+            var reservations = await db.Reservations.Where(x => x.Booker == User.Identity.Name).ToArrayAsync();
+
+            var reservationsView = reservations.Select(async x =>
+            {
+                var t = await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId);
+                return new ReservationView(x, t);
+            }).Select(r => r.Result);
+
+            return View(reservationsView);
         }
 
         public IActionResult Reservation()
