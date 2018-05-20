@@ -11,8 +11,8 @@ using System;
 namespace Reservation.Migrations
 {
     [DbContext(typeof(RoomContext))]
-    [Migration("20180514172951_Initial")]
-    partial class Initial
+    [Migration("20180520181109_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -49,6 +49,18 @@ namespace Reservation.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("MeetingRoom");
+                });
+
+            modelBuilder.Entity("Reservation.Models.Priority", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Priority");
                 });
 
             modelBuilder.Entity("Reservation.Models.Reservation", b =>

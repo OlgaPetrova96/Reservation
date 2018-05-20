@@ -29,16 +29,20 @@ namespace Reservation.Controllers
 
             var reservationsView = reservations.Select(async x =>
             {
-                var t = await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId);
-                return new ReservationView(x, t);
-            }).Select(r => r.Result);
+                var room = await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId);
+                var priority = await db.Priority.FirstOrDefaultAsync(y => y.Id == x.Priority);
+                if (room != null && priority != null )
+                    return new ReservationView(x, room, priority.Value);
+                else
+                    return null;
+            }).Where(x => x != null).Select(r => r.Result);
 
             return View(reservationsView);
         }
 
         public IActionResult Reservation()
         {
-             return RedirectToAction("Index", "Resevation"); ;
+             return RedirectToAction("Index", "Resevation");
         }
     } 
 }

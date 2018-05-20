@@ -44,7 +44,7 @@ namespace Reservation.Controllers
 
         public IActionResult Done()
         {
-           return View();
+            return View();
         }
 
         public IActionResult Fail()

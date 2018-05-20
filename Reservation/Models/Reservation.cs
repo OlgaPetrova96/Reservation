@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Reservation.Models
@@ -8,7 +9,7 @@ namespace Reservation.Models
         [Display(Name = "Номер")] 
         public int Id { get; set; }
 
-        [Display(Name = "Комната")] 
+        [Display(Name = "Переговорка")] 
         public int RoomId{ get; set; } 
 
         [Display(Name = "Начало встречи")]
@@ -26,6 +27,5 @@ namespace Reservation.Models
 
         [Display(Name = "Описание")]
         public string Description { get; set; }
-      
     }
 }

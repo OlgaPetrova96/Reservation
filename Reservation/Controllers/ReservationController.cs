@@ -23,15 +23,21 @@ namespace Reservation.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var reservation = await db.Reservations.ToArrayAsync();
+            var reservations = await db.Reservations.ToArrayAsync();
 
-            var reservationView = reservation.Select(async x =>
+            var reservationsView = reservations.Select(async x =>
             {
-                var t = await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId);
-                return new ReservationView(x, t);
-            }).Select(r => r.Result);
+                var room = await db.MeetingRoom.FirstOrDefaultAsync(y => y.Id == x.RoomId);
+                var priority = await db.Priority.FirstOrDefaultAsync(y => y.Id == x.Priority);
+                if (room != null && priority != null)
+                    return new ReservationView(x, room, priority.Value);
+                else
+                    return null;
+            }).Where(x => x != null).Select(r => r.Result);
 
-            return View(reservationView);
+
+
+            return View(reservationsView);
         }
 
 
@@ -39,8 +45,9 @@ namespace Reservation.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            ViewBag.Room = new SelectList( db.MeetingRoom,"Id", "Name");
-            ViewBag.Priority = new SelectList(new List<Priority> { Priority.High, Priority.Low, Priority.Middle }, "Priority");
+            ViewBag.Room = new SelectList(db.MeetingRoom, "Id", "Name");
+            ViewBag.Priority = new SelectList(db.Priority, "Id", "Value");
+
             return View();
         }
 
@@ -62,24 +69,29 @@ namespace Reservation.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
-            return View();
+            ViewBag.Room = new SelectList(db.MeetingRoom, "Id", "Name");
+            ViewBag.Priority = new SelectList(db.Priority, "Id", "Value");
+            Models.Reservation reservation = db.Reservations.Find(id);
+            return View(reservation);
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Models.Reservation reservation)
         {
             try
             {
-               
-                return RedirectToAction(nameof(Index));
+                db.Entry(reservation).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
             catch
             {
                 return View();
             }
+
+            
         }
 
         [HttpGet]

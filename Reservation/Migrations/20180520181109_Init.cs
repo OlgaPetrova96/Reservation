@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Reservation.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,6 +38,19 @@ namespace Reservation.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Priority",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    Value = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Priority", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Reservations",
                 columns: table => new
                 {
@@ -63,6 +76,9 @@ namespace Reservation.Migrations
 
             migrationBuilder.DropTable(
                 name: "MeetingRoom");
+
+            migrationBuilder.DropTable(
+                name: "Priority");
 
             migrationBuilder.DropTable(
                 name: "Reservations");

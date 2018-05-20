@@ -50,6 +50,18 @@ namespace Reservation.Migrations
                     b.ToTable("MeetingRoom");
                 });
 
+            modelBuilder.Entity("Reservation.Models.Priority", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Value");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Priority");
+                });
+
             modelBuilder.Entity("Reservation.Models.Reservation", b =>
                 {
                     b.Property<int>("Id")

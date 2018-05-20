@@ -37,10 +37,11 @@ namespace Reservation.Controllers
         {
             if (ModelState.IsValid)
             {
+
                 LoginModel user = await db.Logins.FirstOrDefaultAsync(u => u.Login == model.Login && u.Password == model.Password);
                 if (user != null)
                 {
-                    await Authenticate(model.Login); 
+                    await Authenticate(model.Login);
 
                     return RedirectToAction("Index", "Home");
                 }

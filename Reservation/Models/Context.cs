@@ -12,6 +12,9 @@ namespace Reservation.Models
 
         public DbSet<MeetingRoom> MeetingRoom { get; set; }
 
+        public DbSet<Priority>  Priority { get; set; }
+
+
         public RoomContext(DbContextOptions<RoomContext> dbContextOptions) : base(dbContextOptions)
         {
 
