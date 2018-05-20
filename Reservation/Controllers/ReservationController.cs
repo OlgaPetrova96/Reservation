@@ -57,6 +57,7 @@ namespace Reservation.Controllers
         {
             try
             {
+              //  ViewBag.Priority = new SelectList(new List<Priority>{ Priority.High, Priority.Low, Priority.Middle});
                 reservation.Booker = User.Identity.Name;
                 await db.Reservations.AddAsync(reservation);
                 await db.SaveChangesAsync();
@@ -80,18 +81,9 @@ namespace Reservation.Controllers
         [HttpPost]
         public ActionResult Edit(Models.Reservation reservation)
         {
-            try
-            {
-                db.Entry(reservation).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-
-            
+            db.Entry(reservation).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
