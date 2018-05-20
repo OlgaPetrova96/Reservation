@@ -39,7 +39,7 @@ namespace Reservation.Controllers
         [Authorize]
         public IActionResult Create()
         {
-            ViewBag.RoomId = new SelectList( db.MeetingRoom.Select(r => r.Name));
+            ViewBag.Room = new SelectList( db.MeetingRoom,"Id", "Name");
             ViewBag.Priority = new SelectList(new List<Priority> { Priority.High, Priority.Low, Priority.Middle }, "Priority");
             return View();
         }
@@ -50,7 +50,6 @@ namespace Reservation.Controllers
         {
             try
             {
-              //  ViewBag.Priority = new SelectList(new List<Priority>{ Priority.High, Priority.Low, Priority.Middle});
                 reservation.Booker = User.Identity.Name;
                 await db.Reservations.AddAsync(reservation);
                 await db.SaveChangesAsync();
