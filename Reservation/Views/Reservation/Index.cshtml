@@ -1,65 +1,37 @@
-﻿@model IEnumerable<Reservation>
+﻿@using System.Collections.Generic
+@model System.Collections.Generic.IEnumerable<Reservation>
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.RoomId)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.BeginTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.EndTime)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Priority)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Booker)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Description)
-                </th>
-            <th></th>
-        </tr>
+<h3>Все бронирования: </h3>
+<table class="table table-bordered">
+    <thead class="header" style="background: #DCDCDC; font-weight: bold;">
+        <th>@Html.DisplayNameFor(model => model.Id)</th>
+        <th>@Html.DisplayNameFor(model => model.RoomId)</th>
+        <th>@Html.DisplayNameFor(model => model.BeginTime)</th>
+        <th>@Html.DisplayNameFor(model => model.EndTime)</th>
+        <th>@Html.DisplayNameFor(model => model.Priority)</th>
+        <th>@Html.DisplayNameFor(model => model.Booker)</th>
+        <th>@Html.DisplayNameFor(model => model.Description)</th>
+        <th></th>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.RoomId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BeginTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EndTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Priority)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Booker)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model) {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.RoomId)</td>
+                <td>@Html.DisplayFor(modelItem => item.BeginTime)</td>
+                <td>@Html.DisplayFor(modelItem => item.EndTime)</td>
+                <td>@Html.DisplayFor(modelItem => item.Priority)</td>
+                <td>@Html.DisplayFor(modelItem => item.Booker)</td>
+                <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

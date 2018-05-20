@@ -1,34 +1,37 @@
-﻿@using Reservation.Models
-@model IEnumerable<Reservation>
+﻿@using System.Collections.Generic
+@using Reservation.Models
+@model System.Collections.Generic.IEnumerable<Reservation>
 
 @{
     ViewData["Title"] = "My reservations";
 }
 
-<div>
-    <h3>Мои бронирования: </h3>
-    <table class="table table-bordered">
-        <tr class="header" style="background: #DCDCDC">
-            <td><p>Начало встречи</p></td>
-            <td><p>Окончание встречи</p></td>
-            <td><p>Описание</p></td>
-            <td><p>Приоритет</p></td>
-            <td><p>Комната</p></td>
-        </tr>
-        @foreach (Reservation reserv in Model)
-        {
-            <tr>
-                <td><p>@reserv.Id</p></td>
-                <td><p>@reserv.BeginTime</p></td>
-                <td><p>@reserv.EndTime</p></td>
-                <td><p>@reserv.Description</p></td>
-                <td><p>@reserv.Priority</p></td>
-                <td>
-                    <p>
-                        @reserv.RoomId;
-                </p>
+<h3>Мои бронирования: </h3>
+<table class="table table-bordered">
+    <thead class="header" style="background: #DCDCDC; font-weight: bold;">
+        <td>Номер</td>
+        <td>Комната</td>
+        <td>Начало встречи</td>
+        <td>Окончание встречи</td>
+        <td>Описание</td>
+        <td>Приоритет</td>
+        <td></td>
+    </thead>
+    <tbody>
+    @foreach (Reservation reserv in Model)
+    {
+        <tr>
+            <td>@reserv.Id</td>
+            <td>@reserv.RoomId</td>
+            <td>@reserv.BeginTime</td>
+            <td>@reserv.EndTime</td>
+            <td>@reserv.Description</td>
+            <td>@reserv.Priority</td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@reserv.Id">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@reserv.Id">Delete</a>
             </td>
         </tr>
     }
-    </table>
-</div>
+    </tbody>
+</table>
