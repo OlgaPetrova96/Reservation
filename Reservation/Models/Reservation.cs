@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Reservation.Models
@@ -26,6 +27,5 @@ namespace Reservation.Models
 
         [Display(Name = "Описание")]
         public string Description { get; set; }
-      
     }
 }
