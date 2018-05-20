@@ -28,8 +28,8 @@
             <td>@Html.DisplayFor(modelItem => item.Reservation.Booker)</td>
             <td>@Html.DisplayFor(modelItem => item.Reservation.Description)</td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Reservation.Id">Edit</a> |
-                <a asp-action="Delete" asp-route-id="@item.Reservation.Id">Delete</a>
+                <a class="btn btn-default" asp-action="Edit" asp-route-id="@item.Reservation.Id">Изменить</a> 
+                <a class="btn btn-default" asp-action="Delete" asp-route-id="@item.Reservation.Id">Удалить</a>
             </td>
         </tr>
 

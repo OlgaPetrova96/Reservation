@@ -8,7 +8,7 @@ namespace Reservation.Models
         [Required]
         public int Id { get; set; }
 
-        [Display(Name = "Переговорка")]
+        [Display(Name = "Название")]
         public string Name { get; set; }
 
         [Display(Name = "Количество человек")]
