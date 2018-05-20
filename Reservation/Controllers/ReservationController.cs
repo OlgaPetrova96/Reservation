@@ -81,6 +81,7 @@ namespace Reservation.Controllers
         [HttpPost]
         public ActionResult Edit(Models.Reservation reservation)
         {
+            reservation.Booker = User.Identity.Name;
             db.Entry(reservation).State = EntityState.Modified;
             db.SaveChanges();
             return RedirectToAction("Index");
