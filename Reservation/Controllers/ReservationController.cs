@@ -57,11 +57,18 @@ namespace Reservation.Controllers
         {
             try
             {
-              //  ViewBag.Priority = new SelectList(new List<Priority>{ Priority.High, Priority.Low, Priority.Middle});
-                reservation.Booker = User.Identity.Name;
-                await db.Reservations.AddAsync(reservation);
-                await db.SaveChangesAsync();
-                return RedirectToAction("Index");
+                if (reservation.BeginTime < reservation.EndTime)
+                {
+                    reservation.Booker = User.Identity.Name;
+                    await db.Reservations.AddAsync(reservation);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+
+                return RedirectToAction("Fail");
+
+                //  ViewBag.Priority = new SelectList(new List<Priority>{ Priority.High, Priority.Low, Priority.Middle});
+
             }
             catch
             {
@@ -81,10 +88,15 @@ namespace Reservation.Controllers
         [HttpPost]
         public ActionResult Edit(Models.Reservation reservation)
         {
-            reservation.Booker = User.Identity.Name;
-            db.Entry(reservation).State = EntityState.Modified;
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (reservation.BeginTime < reservation.EndTime)
+            {
+                reservation.Booker = User.Identity.Name;
+                db.Entry(reservation).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Fail");
+
         }
 
         [HttpGet]
@@ -108,6 +120,11 @@ namespace Reservation.Controllers
             {
                 return View();
             }
+        }
+
+        public IActionResult Fail()
+        {
+            return View();
         }
     }
 }
