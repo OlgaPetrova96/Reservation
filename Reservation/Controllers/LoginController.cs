@@ -20,11 +20,6 @@ namespace Reservation.Controllers
             db = context;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
         public IActionResult Login()
         {
@@ -65,7 +60,6 @@ namespace Reservation.Controllers
                 LoginModel user = await db.Logins.FirstOrDefaultAsync(u => u.Login == model.Login);
                 if (user == null)
                 {
-                    
                     db.Logins.Add(new LoginModel {Login = model.Login, Password = model.Password });
                     await db.SaveChangesAsync();
 
@@ -92,7 +86,7 @@ namespace Reservation.Controllers
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            return RedirectToAction("Login", "Home");
+            return RedirectToAction("Login", "Login");
         }
 
     }

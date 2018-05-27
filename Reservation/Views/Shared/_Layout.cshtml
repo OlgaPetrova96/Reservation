@@ -26,12 +26,11 @@
                     <li>@Html.ActionLink("Мои бронирования", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Все бронирования", "Index", "Reservation", new { area = "" }, new { @class = "navbar-brand" })</li>
                     <li>@Html.ActionLink("Забронировать", "Create", "Reservation", new { area = "" }, new { @class = "navbar-brand" })</li>
-                   @* <li>@Html.ActionLink("Добавить переговорку", "Create", "Room", new { area = "" }, new { @class = "navbar-brand" })</li>*@
+                    @*<li>@Html.ActionLink("Добавить переговорку", "Create", "Room", new { area = "" }, new { @class = "navbar-brand" })</li>*@
                 </ul>
-                <!--<ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink(" Login", "Login", "Home", new { area = "" }, new { @class = "glyphicon glyphicon-log-in navbar-brand" })</li>
-
-                </ul>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink(" Logout", "Logout", "Login", new { area = "" }, new { @class = "glyphicon glyphicon-log-in navbar-brand" })</li>
+                </ul>
             </div>
         </div>
     </nav>
