@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Reservation.Models
 {
-    public class Reservation
+    public class Reservation : IEntryInDb
     {
         [Display(Name = "Номер")] 
         public int Id { get; set; }

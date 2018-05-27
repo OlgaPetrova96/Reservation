@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
@@ -8,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Reservation.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
+//using Reservation = Reservation.Models.Reservation;
 
 namespace Reservation.Controllers
 {
@@ -125,6 +127,17 @@ namespace Reservation.Controllers
         public IActionResult Fail()
         {
             return View();
+        }
+
+        void CheckEntry(IEntryInDb entry)
+        {
+            var type = entry.GetType();
+            //switch (type)
+            //{
+            //    case typeof(Models.Reservation):
+
+            //        break;
+            //}
         }
     }
 }

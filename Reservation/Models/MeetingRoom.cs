@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Reservation.Models
 {
-    public class MeetingRoom
+    public class MeetingRoom : IEntryInDb
     {
         [Required]
         public int Id { get; set; }

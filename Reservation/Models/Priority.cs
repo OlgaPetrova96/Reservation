@@ -3,7 +3,7 @@
 
 namespace Reservation.Models
 {
-    public class Priority
+    public class Priority : IEntryInDb
     {
         [Required]
         public int Id { get; set; }

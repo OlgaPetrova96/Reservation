@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Reservation.Controllers
 {
+    //[Authorize(Roles = "admin")]
     public class RoomController : Controller
     {
         private RoomContext db;

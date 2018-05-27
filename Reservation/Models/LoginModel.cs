@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Reservation.Models
 {
-    public class LoginModel
+    public class LoginModel : IEntryInDb
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Не указан Email")]

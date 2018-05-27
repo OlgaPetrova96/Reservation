@@ -5,6 +5,10 @@ using Microsoft.EntityFrameworkCore;
  
 namespace Reservation.Models
 {
+    public interface IEntryInDb
+    {
+
+    }
     public class RoomContext : DbContext
     {
         public DbSet<LoginModel> Logins { get; set; }
