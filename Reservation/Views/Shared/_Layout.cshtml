@@ -16,25 +16,34 @@
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </environment>
+    <style>
+        .hov:hover {
+            color: white;
+            background-color: rgba(240, 0, 80, 0.9);
+            border-radius: 10px;
+        }
+        .hov {
+            padding-left: 3px;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background: #f8eeee;">
         <div class="container">
-
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Мои бронирования", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Все бронирования", "Index", "Reservation", new { area = "" }, new { @class = "navbar-brand" })</li>
-                    <li>@Html.ActionLink("Забронировать", "Create", "Reservation", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li class="hov">@Html.ActionLink("Мои бронирования", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li class="hov">@Html.ActionLink("Все бронирования", "Index", "Reservation", new { area = "" }, new { @class = "navbar-brand" })</li>
+                    <li class="hov">@Html.ActionLink("Забронировать", "Create", "Reservation", new { area = "" }, new { @class = "navbar-brand" })</li>
                     @*<li>@Html.ActionLink("Добавить переговорку", "Create", "Room", new { area = "" }, new { @class = "navbar-brand" })</li>*@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>@Html.ActionLink(" Logout", "Logout", "Login", new { area = "" }, new { @class = "glyphicon glyphicon-log-in navbar-brand" })</li>
+                    <li class="hov">@Html.ActionLink(" Logout", "Logout", "Login", new { area = "" }, new { @class = "glyphicon glyphicon-log-in navbar-brand" })</li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="jumbotron text-center" style="clear: both;">
+    <div class="jumbotron text-center" style="clear: both; background: #fb0050; color: white;">
         <h1>Система бронирования переговорных комнат</h1>
     </div>
     <div class="container body-content">

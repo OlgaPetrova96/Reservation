@@ -18,11 +18,11 @@
             </div>
             <div class="form-group">
                 <label asp-for="Capacity" class="control-label"></label>
-                <input asp-for="Capacity" class="form-control" />
+                <input asp-for="Capacity" class="form-control" min="1" max="40"/>
                 <span asp-validation-for="Capacity" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Добавить" class="btn btn-default" />
+                <input type="submit" value="Добавить" class="btn btn-default hov" />
             </div>
         </form>
     </div>
