@@ -66,11 +66,8 @@ namespace Reservation.Controllers
                     await db.SaveChangesAsync();
                     return RedirectToAction("Index");
                 }
-
-                return RedirectToAction("Fail");
-
-                //  ViewBag.Priority = new SelectList(new List<Priority>{ Priority.High, Priority.Low, Priority.Middle});
-
+                
+                return RedirectToAction("Fail", "Room");
             }
             catch
             {
@@ -90,15 +87,10 @@ namespace Reservation.Controllers
         [HttpPost]
         public ActionResult Edit(Models.Reservation reservation)
         {
-            if (reservation.BeginTime < reservation.EndTime)
-            {
-                reservation.Booker = User.Identity.Name;
-                db.Entry(reservation).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return RedirectToAction("Fail");
-
+            reservation.Booker = User.Identity.Name;
+            db.Entry(reservation).State = EntityState.Modified;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         [HttpGet]

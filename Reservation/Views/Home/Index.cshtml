@@ -7,7 +7,7 @@
 
 <h3>Мои бронирования: </h3>
 <table class="table table-bordered">
-    <thead class="header" style="background: #DCDCDC; font-weight: bold;">
+    <thead class="header" style="background: #fb0050; color: white; font-weight: bold;">
         <td>Переговорка</td>
         <td>Количество людей</td>
         <td>Начало встречи</td>
@@ -23,16 +23,16 @@
         <tr>
             <td>@reserv.MeetingRoom.Name</td>
             <td>@reserv.MeetingRoom.Capacity</td>
-            <td>@reserv.Reservation.BeginTime</td>
-            <td>@reserv.Reservation.EndTime</td>
+            <td>@reserv.Reservation.BeginTime.ToString("dd.MM.yyyy hh:mm")</td>
+            <td>@reserv.Reservation.EndTime.ToString("dd.MM.yyyy hh:mm")</td>
             <td>@reserv.Priority</td>
             <td>@reserv.Reservation.Description</td>
             <td>
-                <a class="btn btn-default" asp-action="Edit" asp-controller="Reservation" asp-route-id="@reserv.Reservation.Id">Изменить</a>
-                <a class="btn btn-default" asp-action="Delete" asp-controller="Reservation" asp-route-id="@reserv.Reservation.Id">Удалить</a>
+                <a class="btn btn-default hov" asp-action="Edit" asp-controller="Reservation" asp-route-id="@reserv.Reservation.Id">Изменить</a>
+                <a class="btn btn-default hov" asp-action="Delete" asp-controller="Reservation" asp-route-id="@reserv.Reservation.Id">Удалить</a>
             </td>
         </tr>
     }
-
+    
     </tbody>
 </table>
