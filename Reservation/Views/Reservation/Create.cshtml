@@ -10,24 +10,24 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom: 20px;">
                 <label asp-for="RoomId" class="control-label"></label>
                 @Html.DropDownList("RoomId", ViewBag.Room as SelectList)
             </div>
             
-            <div>
+            <div style="margin-bottom: 20px;">
                 <label class="control-label">Дата</label><br />
-                <input class="form-control" type="date" name="Date" />
+                <input class="form-control" type="date" required="true" name="Date" />
             </div>
             
-            <div>
+            <div style="margin-bottom: 20px;">
                 <label class="control-label">Начало встречи</label><br />
-                <input class="form-control" type="time" name="BeginTime" />
+                <input class="form-control" type="time" required="true" name="BeginTime" />
             </div>
             
-            <div>
+            <div style="margin-bottom: 20px;">
                 <label class="control-label">Окончание встречи</label><br />
-                <input class="form-control" type="time" name="EndTime" />
+                <input class="form-control" type="time" required="true" name="EndTime" />
             </div>
             
             <div class="form-group">
