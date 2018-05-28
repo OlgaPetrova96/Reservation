@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Reservation.Infrastructure;
 using Reservation.Models;
 
 namespace Reservation
@@ -36,7 +37,11 @@ namespace Reservation
                     options.LoginPath = new PathString("/Login/Login");
                 });
 
-            services.AddMvc();
+            //services.AddMvc();
+            services.AddMvc(opts =>
+            {
+                opts.ModelBinderProviders.Insert(0, new CustomDateTimeModelBinderProvider());
+            });
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)

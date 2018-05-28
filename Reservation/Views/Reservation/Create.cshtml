@@ -10,32 +10,40 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <div class="form-group">
+            <div class="form-group" style="margin-bottom: 20px;">
                 <label asp-for="RoomId" class="control-label"></label>
                 @Html.DropDownList("RoomId", ViewBag.Room as SelectList)
             </div>
-            <div class="form-group">
-                <label asp-for="BeginTime" class="control-label"></label>
-                    <input asp-for="BeginTime" class="form-control"/>
-                    @*<input type="date" asp-for="BeginTime"/>*@                
-                    <span asp-validation-for="BeginTime" class="text-danger"></span>
-                </div>
-                <div class="form-group">
-                    <label asp-for="EndTime" class="control-label"></label>
-                    <input asp-for="EndTime" class="form-control" />
-                    <span asp-validation-for="EndTime" class="text-danger"></span>
-                </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label class="control-label">Дата</label><br />
+                <input class="form-control" type="date" required="true" name="Date" />
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label class="control-label">Начало встречи</label><br />
+                <input class="form-control" type="time" required="true" name="BeginTime" />
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <label class="control-label">Окончание встречи</label><br />
+                <input class="form-control" type="time" required="true" name="EndTime" />
+            </div>
+            
             <div class="form-group">
                 <label asp-for="Priority" class="control-label"></label>
                 @Html.DropDownList("Priority", ViewBag.Priority as SelectList)
             </div>
+            
             <div class="form-group">
                 <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+            
             <div class="form-group">
                 <input type="submit" value="Забронировать" class="btn btn-default hov" />
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
         </form>
     </div>

@@ -13,12 +13,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
+                <input asp-for="Name" class="form-control" required="true"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Capacity" class="control-label"></label>
-                <input asp-for="Capacity" class="form-control" min="1" max="40"/>
+                <input asp-for="Capacity" class="form-control" min="1" max="40" required="true"/>
                 <span asp-validation-for="Capacity" class="text-danger"></span>
             </div>
             <div class="form-group">
